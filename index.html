@@ -3,72 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Aashutosh Pratap Singh</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1f1f1f;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ff5722;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #ffffff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: #ff5722;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background-color: #2d2d2d;
+            color: #ffffff;
+        }
+        .contact-form button {
+            background-color: #ff5722;
+            border: none;
+            padding: 10px 20px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #e64a19;
+        }
+        .file-upload input[type="file"] {
+            display: none;
+        }
+        .file-upload label {
+            background-color: #ff5722;
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+        .file-upload label:hover {
+            background-color: #e64a19;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+        }
+    </style>
 </head>
-   
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.sidebar {width: 120px;background: #222;}
-#main {margin-left: 120px;}
-@media only screen and (max-width: 600px) {#main {margin-left: 0;}}
-
-/* Logo style */
-.logo {position: absolute; top: 10px; left: 10px; width: 50px;}
-
-/* Rest of your styles */
-/* Add your remaining CSS styles here */
-</style>
-
-<body>
-
-<!-- Logo -->
-<img src="aps.jpg" alt="Logo" class="logo">
-
 <body>
     <header>
-        <h1> Hey! It's me Aashutosh </h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <img src="path/to/your/photo.jpg" alt="Your Photo" id="profile-photo">
+        <h1>Your Name</h1>
+        <p>Your Job Title</p>
     </header>
-    
-    <section id="about">
-        <h2><center>About Me</center></h2>
-        <p> Portfolio will be updated soon .</p>
-    </section>
-    
-    <section id="portfolio">
-        <h2>My Work</h2>
-        <div class="portfolio-item">
-            <img src="path-to-image.jpg" alt="Project 1">
-            <p>Project 1 description</p>
-        </div>
-        <!-- Add more portfolio items as needed -->
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/mayrgrpl" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Send</button>
- 
-</form>
-    
+    <nav>
+        <a href="#bio">Bio</a>
+        <a href="#contact">Contact</a>
+        <a href="#uploads">Uploads</a>
+    </nav>
+    <div class="container">
+        <section id="bio">
+            <h2>About Me</h2>
+            <p>Your bio goes here. You can talk about your background, skills, and experiences.</p>
+        </section>
+        <section id="social">
+            <h2>Find Me On</h2>
+            <div class="social-links">
+                <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form class="contact-form" action="mailto:youremail@example.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        <section id="uploads">
+            <h2>Upload Files</h2>
+            <div class="file-upload">
+                <input type="file" id="file-input">
+                <label for="file-input">Choose File</label>
+            </div>
+        </section>
+    </div>
     <footer>
-        <p>&copy; 2024 Created by Aashutosh Pratap Singh</p>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
 </body>
 </html>
