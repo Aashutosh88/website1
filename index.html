@@ -3,60 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aashutosh Pratap Singh</title>
-  
+    <title>Aashutosh Pratap Singh - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f6f6f6; /* Light gray background */
+            color: #333; /* Default text color */
+        }
+
+        .parallax {
+            perspective: 1px;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #dcedc8, #c5e1a5, #aed581, #9ccc65); /* Gradient of light green colors */
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            z-index: -1;
+            transform: translateZ(-1px) scale(2);
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .background::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 20%);
+            background-size: 200% 200%;
+            z-index: -1;
+            animation: moveStars 5s linear infinite;
+        }
+
+        @keyframes moveStars {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50%, 50%);
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95); /* White background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            color: #584222; /* Dark brown text */
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            color: #584222; /* Dark brown text */
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        .content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content ul li {
+            margin-bottom: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ffffff; /* White background for navigation */
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        nav a {
+            color: #584222; /* Dark brown text */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #8B4513; /* Dark brown hover color */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff; /* White background for footer */
+            color: #584222; /* Dark brown text */
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            margin: 0 20px;
+            color: #007acc;
+            font-size: 28px;
+            text-decoration: none;
+        }
+
+        .social-links a i {
+            color: #584222; /* Dark brown text */
+        }
+
+        .contact-form {
+            margin-top: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #584222; /* Dark brown text */
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            background-color: #ffffff; /* White background for form inputs */
+            color: #584222; /* Dark brown text */
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form button {
+            background-color: #8B4513; /* Dark brown button */
+            border: none;
+            padding: 10px 20px;
+            color: #ffffff;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #584222; /* Darker brown on hover */
+        }
+
+        .project {
+            margin-bottom: 30px;
+        }
+
+        .project h3 {
+            color: #584222; /* Dark brown text */
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            margin-bottom: 10px;
+        }
+
+        .skills ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        .skills li {
+            background-color: #8B4513; /* Dark brown button */
+            color: #ffffff;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
 </head>
-<body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #d2b48c; color: #333;">
+<body>
+    <div class="parallax">
+        <div class="background"></div>
+        <header class="content">
+            <img src="aps.JPG" alt="Aashutosh Pratap Singh's Profile Photo" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; border: 5px solid #ffffff; margin-bottom: 20px;">
+            <h1>Aashutosh Pratap Singh</h1>
+            <p>Introducing Myself!</p>
+        </header>
 
-    <header style="background-color: #603d1b; padding: 20px; text-align: left; color: #ffffff;">
-        <img src="aps.JPG" alt="Aashutosh Pratap Singh's Profile Photo" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; border: 5px solid #ffffff; float: left; margin-right: 20px;">
-        <h1>Aashutosh Pratap Singh</h1>
-        <p>Introducing Myself!</p>
-    </header>
+        <nav>
+            <a href="#bio">Bio</a>
+            <a href="#education">Education</a>
+            <a href="#career">Career</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-    <nav style="display: flex; justify-content: left; background-color: #c49b6e; padding: 10px 0;">
-        <a href="#bio" style="color: #ffffff; text-decoration: none; margin: 0 15px; font-weight: bold;">Bio</a>
-        <a href="#contact" style="color: #ffffff; text-decoration: none; margin: 0 15px; font-weight: bold;">Contact</a>
-    </nav>
-
-    <div class="container" style="padding: 20px; max-width: 800px; margin: auto; text-align: left;">
-        <section id="bio">
+        <section id="bio" class="content">
             <h2>About Me</h2>
             <p>Hello! My name is Aashutosh Pratap Singh, and I am an 18-year-old high school student living in the vibrant city of Kathmandu, Nepal. I have a deep passion for coding and am excited to share that this is my very first website. Creating and exploring the world of programming has been an incredible journey, and I'm eager to continue learning and growing in this field. Thank you for visiting my portfolio!</p>
         </section>
 
-        <section id="social">
-            <h2>Find Me On</h2>
-            <div class="social-links" style="display: flex; justify-content: left;"> 
-                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                <a  href="https://facebook.com/profile.php?id=100016440818653&mibextid=ZbWKwL" target="_blank" style="margin: 0 20px; color: #007acc; font-size: 38px; text-decoration: none;"><i class="fa-brands fa-facebook-f" style="color: #584222;"></i></a>
-                <a href="https://instagram.com/aashutosh_singh88?igsh=eXRzenZ2bHRycW1q" target="_blank" style="margin: 0 20px; color: #007acc; font-size: 38px; text-decoration: none;"><i class="fa-brands fa-instagram"  style="color: #584222;"></i></a>
-                <a href="https://snapchat.com/add/aashutosh_s8838?share_id=56g_5xW3_UU&locale=en-GB" target="_blank" style="margin: 0 20px; color: #007acc; font-size: 38px; text-decoration: none;"><i class="fa-brands fa-snapchat"  style="color: #584222;"></i></a>
-                <a href="https://LinkedIn.com/in/aashutosh-pratap-singh-00797b23a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 20px; color: #007acc; font-size: 38px; text-decoration: none;"><i class="fa-brands fa-linkedin-in" style="color: #584222;"></i></a>
-                
+        <section id="education" class="content">
+            <h2>Education</h2>
+            <div class="schooling">
+                <div class="school">
+		    <h3>Secoundary School </h3>
+                    <p>Kathmandu International School, Kathmandu</p>
+                    <p>Status:Completed on 2022</p>
+		</div>
+		<div>
+                    <h3>High School </h3>
+                    <p>Goldengate International College, Kathmandu</p>
+                    <p>Status:Ongoing</p>
+                </div>
+                <!-- Add more schools if needed -->
             </div>
         </section>
 
-        <section id="contact">
+        <section id="career" class="content">
+            <h2>Career</h2>
+            <div class="career">
+                <div class="job">
+                    <h3>Working on it!</h3>
+                   
+                </div>
+                <!-- Add more jobs if needed -->
+            </div>
+        </section>
+
+        <section id="skills" class="content">
+            <h2>Skills</h2>
+            <div class="skills">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Problem Solving</li>
+                    <li>Teamwork</li>
+                    <li>Communication</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="content">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p>Designed and developed a personal portfolio website showcasing skills, education, and projects.</p>
+            </div>
+            <!-- Add more projects if needed -->
+        </section>
+
+        <section id="contact" class="content">
             <h2>Contact Me</h2>
-            <form class="contact-form" action="https://formspree.io/f/mayrgrpl" method="post" style="margin: 20px 0;">
-                <label for="name" style="display: block; margin-bottom: 10px;">Name:</label>
-                <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; background-color: #fff; color: #333;">
+            <form class="contact-form" action="https://formspree.io/f/mayrgrpl" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-                <label for="email" style="display: block; margin-bottom: 10px;">Email:</label>
-                <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; background-color: #fff; color: #333;">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-                <label for="message" style="display: block; margin-bottom: 10px;">Message:</label>
-                <textarea id="message" name="message" required style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; background-color: #fff; color: #333;"></textarea>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
 
-                <button type="submit" style="background-color: #007acc; border: none; padding: 10px 20px; color: #ffffff; cursor: pointer;">Send</button>
+                <button type="submit">Send</button>
             </form>
         </section>
     </div>
 
-    <footer style="text-align: center; padding: 20px; background-color: #3e1f00; color: #ffffff;">
+    <footer>
         <p>&copy; 2024 Created by Aashutosh Pratap Singh. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com/profile.php?id=100016440818653&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/aashutosh_singh88?igsh=eXRzenZ2bHRycW1q" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://snapchat.com/add/aashutosh_s8838?share_id=56g_5xW3_UU&locale=en-GB" target="_blank"><i class="fab fa-snapchat"></i></a>
+            <a href="https://LinkedIn.com/in/aashutosh-pratap-singh-00797b23a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
     </footer>
-
 </body>
 </html>
