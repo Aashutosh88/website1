@@ -5,112 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aashutosh Pratap Singh - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f0f8ff; color: #333; overflow-x: hidden;">
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff; /* Light blue background */
-            color: #333; /* Default text color */
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
+    <header style="text-align: center; padding: 30px 0; background-color: transparent; position: relative;">
+        <img src="aps.JPG" alt="Aashutosh Pratap Singh's Profile Photo" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; border: 5px solid #ffffff; margin-bottom: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+        <h1 style="font-size: 32px; margin-bottom: 10px; color: #584222;">Aashutosh Pratap Singh</h1>
+        <p style="font-size: 18px; color: #584222;">Introducing Myself!</p>
+    </header>
 
-        /* Header styling */
-        header {
-            text-align: center;
-            padding: 30px 0;
-            background-color: transparent; /* Transparent background */
-            position: relative; /* Ensure z-index works */
-        }
+    <nav style="background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border-radius: 5px; text-align: center; padding: 10px 0; margin-bottom: 20px; position: relative;">
+        <a href="#bio" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Bio</a>
+        <a href="#education" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Education</a>
+        <a href="#career" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Career</a>
+        <a href="#skills" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Skills</a>
+        <a href="#projects" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Projects</a>
+        <a href="#contact" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Contact</a>
+    </nav>
 
-        header img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 5px solid #ffffff;
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
+    <section id="bio" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
+        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">About Me</h2>
+        <p style="margin-bottom: 20px;">Hello! My name is Aashutosh Pratap Singh, and I am an 18-year-old high school student living in the vibrant city of Kathmandu, Nepal. I have a deep passion for coding and am excited to share that this is my very first website. Creating and exploring the world of programming has been an incredible journey, and I'm eager to continue learning and growing in this field. Thank you for visiting my portfolio!</p>
+    </section>
 
-        header h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #584222; /* Dark brown text */
-        }
+    <section id="education" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
+        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">Education</h2>
+        <div class="schooling">
+            <div class="school">
+                <h3 style="color: #584222; font-size: 20px; margin-bottom: 10px;">Secondary School</h3>
+                <p>Kathmandu International School, Kathmandu</p>
+                <p>Status: Completed on 2022</p>
+            </div>
+            <div>
+                <h3 style="color: #584222; font-size: 20px; margin-bottom: 10px;">High School</h3>
+                <p>Goldengate International College, Kathmandu</p>
+                <p>Status: Ongoing</p>
+            </div>
+        </div>
+    </section>
 
-        header p {
-            font-size: 18px;
-            color: #584222; /* Dark brown text */
-        }
+    <section id="career" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
+        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">Career</h2>
+        <div class="career">
+            <div class="job">
+                <h3 style="color: #584222; font-size: 20px; margin-bottom: 10px;">Working on it</h3>
+            </div>
+        </div>
+    </section>
 
-        /* Star-shaped background */
-        body:before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #f0f8ff; /* Same as body background */
-            z-index: -1; /* Behind all content */
-            pointer-events: none; /* Allow interaction with elements */
-            mask-image: radial-gradient(circle at 50% 100%, transparent 0, transparent 65%, #ffffff 70%);
-            mask-size: 200px 200px;
-            mask-repeat: repeat;
-            mask-position: center;
-            transform: rotate(45deg);
-        }
+    <section id="skills" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
+        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">Skills</h2>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Problem Solving</li>
+            <li>Teamwork</li>
+            <li>Communication</li>
+        </ul>
+    </section>
 
-        /* Navigation bar */
-        nav {
-            background-color: #ffffff; /* White background for navigation */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            text-align: center;
-            padding: 10px 0;
-            margin-bottom: 20px;
-            position: relative; /* Ensure z-index works */
-        }
+    <section id="projects" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
+        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">Projects</h2>
+        <div class="project">
+            <h3 style="color: #584222; font-size: 20px; margin-bottom: 10px;">Portfolio Website</h3>
+            <p>Designed and developed my personal portfolio using HTML, CSS, and JavaScript.</p>
+        </div>
+    </section>
 
-        nav a {
-            color: #584222; /* Dark brown text */
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+    <section id="contact" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
+        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">Contact Me</h2>
+        <form class="contact-form" action="https://formspree.io/f/mayrgrpl" method="post">
+            <label for="name" style="color: #584222; display: block; margin-bottom: 10px;">Name:</label>
+            <input type="text" id="name" name="name" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; background-color: #ffffff; color: #584222; border-radius: 5px; font-size: 14px;" required>
 
-        /* Content sections */
-        .content {
-            max-width: 800px;
-            margin: auto;
-            padding: 30px;
-            background-color: #ffffff; /* White background */
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            color: #584222; /* Dark brown text */
-            margin-bottom: 30px;
-            position: relative; /* Ensure z-index works */
-        }
+            <label for="email" style="color: #584222; display: block; margin-bottom: 10px;">Email:</label>
+            <input type="email" id="email" name="_replyto" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; background-color: #ffffff; color: #584222; border-radius: 5px; font-size: 14px;" required>
 
-        .content h2 {
-            color: #584222; /* Dark brown text */
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
+            <label for="message" style="color: #584222; display: block; margin-bottom: 10px;">Message:</label>
+            <textarea id="message" name="message" rows="4" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; background-color: #ffffff; color: #584222; border-radius: 5px; font-size: 14px; resize: vertical;" required></textarea>
 
-        .content p {
-            margin-bottom: 20px;
-        }
+            <button type="submit" style="background-color: #8B4513; border: none; padding: 10px 20px; color: #ffffff; cursor: pointer; border-radius: 5px; font-size: 14px; transition: background-color 0.3s ease;">Submit</button>
+        </form>
+    </section>
 
-        /* Footer */
-        footer {
+    
+    <footer> <style>footer {
             text-align: center;
             padding: 20px;
             background-color: #ffffff; /* White background for footer */
@@ -119,195 +98,15 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             position: relative; /* Ensure z-index works */
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .social-links a {
-            margin: 0 20px;
-            color: #007acc;
-            font-size: 28px;
-            text-decoration: none;
-        }
-
-        .social-links a i {
-            color: #584222; /* Dark brown text */
-        }
-
-        /* Contact form */
-        .contact-form {
-            margin-top: 20px;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 10px;
-            color: #584222; /* Dark brown text */
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            background-color: #ffffff; /* White background for form inputs */
-            color: #584222; /* Dark brown text */
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .contact-form button {
-            background-color: #8B4513; /* Dark brown button */
-            border: none;
-            padding: 10px 20px;
-            color: #ffffff;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #584222; /* Darker brown on hover */
-        }
-
-        /* Projects */
-        .project {
-            margin-bottom: 30px;
-        }
-
-        .project h3 {
-            color: #584222; /* Dark brown text */
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            /* Adjustments for smaller screens */
-            header h1 {
-                font-size: 28px;
-            }
-
-            header p {
-                font-size: 16px;
-            }
-
-            .content {
-                padding: 20px;
-            }
-
-            .contact-form input, .contact-form textarea {
-                font-size: 12px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <img src="aps.JPG" alt="Aashutosh Pratap Singh's Profile Photo">
-        <h1>Aashutosh Pratap Singh</h1>
-        <p>Introducing Myself!</p>
-    </header>
-
-    <nav>
-        <a href="#bio">Bio</a>
-        <a href="#education">Education</a>
-        <a href="#career">Career</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="bio" class="content">
-        <h2>About Me</h2>
-        <p>Hello! My name is Aashutosh Pratap Singh, and I am an 18-year-old high school student living in the vibrant city of Kathmandu, Nepal. I have a deep passion for coding and am excited to share that this is my very first website. Creating and exploring the world of programming has been an incredible journey, and I'm eager to continue learning and growing in this field. Thank you for visiting my portfolio!</p>
-    </section>
-
-    <section id="education" class="content">
-        <h2>Education</h2>
-        <div class="schooling">
-            <div class="school">
-                <h3>Secoundary School </h3>
-                    <p>Kathmandu International School, Kathmandu</p>
-                    <p>Status:Completed on 2022</p>
-		</div>
-		<div>
-                    <h3>High School </h3>
-                    <p>Goldengate International College, Kathmandu</p>
-                    <p>Status:Ongoing</p>
-            </div>
-            <!-- Add more schools if needed -->
-        </div>
-    </section>
-
-    <section id="career" class="content">
-        <h2>Career</h2>
-        <div class="career">
-            <div class="job">
-                <h3>Working on it</h3>
-                
-            </div>
-            <!-- Add more jobs if needed -->
-        </div>
-    </section>
-
-    <section id="skills" class="content">
-        <h2>Skills</h2>
-        <ul>
-           	 <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Problem Solving</li>
-                    <li>Teamwork</li>
-                    <li>Communication</li>
-        </ul>
-    </section>
-
-    <section id="projects" class="content">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Portfolio Website</h3>
-            <p>Designed and developed my personal portfolio using HTML, CSS, and JavaScript.</p>
-        </div>
-        <!-- Add more projects if needed -->
-    </section>
-
-    <section id="contact" class="content">
-        <h2>Contact Me</h2>
-        <form class="contact-form" action="https://formspree.io/f/mayrgrpl" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <footer>
-	<p>&copy; 2024 Created by Aashutosh Pratap Singh. All rights reserved.</p>
+        } </style>
         <div class="social-links">
-            <a href="https://facebook.com/profile.php?id=100016440818653&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/aashutosh_singh88?igsh=eXRzenZ2bHRycW1q" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://snapchat.com/add/aashutosh_s8838?share_id=56g_5xW3_UU&locale=en-GB" target="_blank"><i class="fab fa-snapchat"></i></a>
-            <a href="https://LinkedIn.com/in/aashutosh-pratap-singh-00797b23a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+            <a  href="https://facebook.com/profile.php?id=100016440818653&mibextid=ZbWKwL" target="_blank" style="margin: 0 10px; color: #007acc; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-facebook-f" style="color: #584222;"></i></a>
+                <a href="https://instagram.com/aashutosh_singh88?igsh=eXRzenZ2bHRycW1q" target="_blank" style="margin: 0 10px; color: #007acc; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-instagram"  style="color: #584222;"></i></a>
+                <a href="https://snapchat.com/add/aashutosh_s8838?share_id=56g_5xW3_UU&locale=en-GB" target="_blank" style="margin: 0 10px; color: #007acc; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-snapchat"  style="color: #584222;"></i></a>
+                <a href="https://LinkedIn.com/in/aashutosh-pratap-singh-00797b23a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 10px; color: #007acc; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-linkedin-in" style="color: #584222;"></i></a>
+		</div>
+	<p>&copy; 2024 Created by Aashutosh Pratap Singh. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
