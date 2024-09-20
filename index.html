@@ -5,100 +5,405 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aashutosh Pratap Singh - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body style="font-family: Arial, sans-serif; background-color:#ADD8E6; color: #333; overflow-x: hidden;"> 
-	
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
 
-    <header style="text-align: center; padding: 30px 0; background-color: transparent; position: relative;">
-        <img src="aps.JPG" alt="Aashutosh Pratap Singh's Profile Photo" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; border: 5px solid #ffffff; margin-bottom: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
-        <h1 style="font-size: 32px; margin-bottom: 10px; color: #584222;">Aashutosh Pratap Singh</h1>
-        <p style="font-size: 18px; color: #584222;">Introducing Myself!</p>
+        /* Hacking-themed intro animation */
+        #intro {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: #00ff00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            font-size: 2rem;
+            animation: fadeOut 4s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        /* Binary background animation */
+        body {
+            background: black;
+            color: #00ff00;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            perspective: 1200px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, transparent, black), url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-repeat: repeat;
+            opacity: 0.05;
+        }
+
+        #binary-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .binary-stream {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            color: rgba(0, 255, 0, 0.3);
+            animation: moveBinary 10s linear infinite;
+        }
+
+        @keyframes moveBinary {
+            0% { top: -100%; }
+            100% { top: 100%; }
+        }
+
+        /* Header Styling */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 100px;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        /* Logo Container */
+        .logo-container {
+            width: 60px;
+            height: 80px; /* 3x4 cm ratio */
+            perspective: 1000px;
+        }
+
+        /* Facebook-sized logo with 3D effect */
+        .profile-logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: transform 0.8s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .profile-logo:hover {
+            transform: rotateY(360deg) rotateX(360deg);
+        }
+
+        /* Navigation Menu */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #00ff00;
+            font-size: 20px;
+            padding: 10px 20px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: black;
+            background-color: #00ff00;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        #hero {
+            text-align: center;
+            padding-top: 200px; /* Adjusted for logo */
+            padding-bottom: 100px;
+        }
+
+        #hero h1 {
+            font-size: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        #hero p {
+            font-size: 24px;
+            margin-top: 20px;
+            text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* About Section */
+        #about {
+            width: 80%;
+            margin: 100px auto;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            transform: rotateX(10deg) rotateY(-10deg);
+            transition: transform 0.8s ease-in-out;
+        }
+
+        #about:hover {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+
+        #about h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+
+        #about p {
+            font-size: 20px;
+            color: #c0c0c0;
+        }
+
+        /* Skills Section */
+        #skills {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #skills h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+
+        #skills ul {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        #skills ul li {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #00ff00;
+            transition: transform 0.5s;
+        }
+
+        #skills ul li:hover {
+            transform: scale(1.2) rotateY(20deg);
+        }
+
+        /* Contact Section */
+        #contact {
+            width: 80%;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+
+        #contact p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #00ff00;
+        }
+
+        /* Contact Form Styling */
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #00ff00;
+        }
+
+        #contact button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00ff00;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #contact button:hover {
+            background-color: #88d3ce;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            margin-top: 50px;
+        }
+
+        footer p {
+            color: #00ff00;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hacking-themed intro -->
+    <div id="intro">Initializing Portfolio...</div>
+
+    <!-- Binary Background -->
+    <div id="binary-background"></div>
+
+    <header>
+        <div class="logo-container">
+            <img src="face.png" alt="Profile Logo" class="profile-logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav style="background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border-radius: 5px; text-align: center; padding: 10px 0; margin-bottom: 20px; position: relative;">
-        <a href="#bio" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Bio</a>
-        <a href="#education" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Education</a>
-        <a href="#career" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Career</a>
-        <a href="#skills" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Skills</a>
-        <a href="#projects" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Projects</a>
-        <a href="#contact" style="color: #584222; text-decoration: none; margin: 0 15px; font-weight: bold;">Contact</a>
-    </nav>
-
-    <section id="bio" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
-        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">About Me</h2>
-        <p style="margin-bottom: 20px;">Hello! My name is Aashutosh Pratap Singh, and I am an 18-year-old high school student living in the vibrant city of Kathmandu, Nepal. I have a deep passion for coding and am excited to share that this is my very first website. Creating and exploring the world of programming has been an incredible journey, and I'm eager to continue learning and growing in this field. Thank you for visiting my portfolio!</p>
+    <section id="hero">
+        <h1>Aashutosh Pratap Singh</h1>
+        <p>Computer Engineering Student</p>
     </section>
 
-    <section id="education" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
-        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">Education</h2>
-        <div class="schooling">
-            <div class="school">
-                <h3 style="color: #584222; font-size: 20px; margin-bottom: 10px;">Secondary School</h3>
-                <p>Kathmandu International School, Kathmandu</p>
-                <p>Status: Completed on 2022</p>
-            </div>
-            <div>
-                <h3 style="color: #584222; font-size: 20px; margin-bottom: 10px;">High School</h3>
-                <p>Goldengate International College, Kathmandu</p>
-                <p>Status: Ongoing</p>
-            </div>
-        </div>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            welcome! To my Hacking theme portfolio,I am a passionate computer Science student with a strong focus on coding. 
+            I specialize in creating interactive and dynamic websites, incorporating innovative 
+            designs and modern technologies.
+        </p>
     </section>
 
-    <section id="career" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
-        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">Career</h2>
-        <div class="career">
-            <div class="job">
-                <h3 style="color: #584222; font-size: 20px; margin-bottom: 10px;">Working on it</h3>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
-        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">Skills</h2>
-        <ul style="list-style-type: none; padding-left: 0;">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Problem Solving</li>
-            <li>Teamwork</li>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
             <li>Communication</li>
+            <li>Coding</li>
+           
         </ul>
     </section>
 
-    <section id="projects" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
-        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">Projects</h2>
-        <div class="project">
-            <h3 style="color: #584222; font-size: 20px; margin-bottom: 10px;">Portfolio Website</h3>
-            <p>Designed and developed my personal portfolio using HTML, CSS, and JavaScript.</p>
-        </div>
-    </section>
-
-    <section id="contact" class="content" style="max-width: 800px; margin: auto; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); text-align: left; color: #584222; margin-bottom: 30px; position: relative;">
-        <h2 style="color: #584222; font-size: 24px; margin-bottom: 20px;">Contact Me</h2>
+    <section id="contact">
+        <h2>Contact</h2>
+     
         <form class="contact-form" action="https://formspree.io/f/mayrgrpl" method="post">
-            <label for="name" style="color: #584222; display: block; margin-bottom: 10px;">Name:</label>
-            <input type="text" id="name" name="name" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; background-color: #ffffff; color: #584222; border-radius: 5px; font-size: 14px;" required>
-
-            <label for="email" style="color: #584222; display: block; margin-bottom: 10px;">Email:</label>
-            <input type="email" id="email" name="_replyto" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; background-color: #ffffff; color: #584222; border-radius: 5px; font-size: 14px;" required>
-
-            <label for="message" style="color: #584222; display: block; margin-bottom: 10px;">Message:</label>
-            <textarea id="message" name="message" rows="4" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; background-color: #ffffff; color: #584222; border-radius: 5px; font-size: 14px; resize: vertical;" required></textarea>
-
-            <button type="submit" style="background-color: #8B4513; border: none; padding: 10px 20px; color: #ffffff; cursor: pointer; border-radius: 5px; font-size: 14px; transition: background-color 0.3s ease;">Submit</button>
+    
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
-    
-    <footer> <style>footer { text-align: center; padding: 20px; background-color: #ffffff; color: #584222;  margin-top: 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border-radius: 5px; position: relative; } </style>
+    <footer>
         <div class="social-links">
-            <a  href="https://facebook.com/profile.php?id=100016440818653&mibextid=ZbWKwL" target="_blank" style="margin: 0 10px; color: #007acc; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-facebook-f" style="color: #584222;"></i></a>
-                <a href="https://instagram.com/aashutosh_singh88?igsh=eXRzenZ2bHRycW1q" target="_blank" style="margin: 0 10px; color: #007acc; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-instagram"  style="color: #584222;"></i></a>
-                <a href="https://snapchat.com/add/aashutosh_s8838?share_id=56g_5xW3_UU&locale=en-GB" target="_blank" style="margin: 0 10px; color: #007acc; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-snapchat"  style="color: #584222;"></i></a>
-                <a href="https://LinkedIn.com/in/aashutosh-pratap-singh-00797b23a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 10px; color: #007acc; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-linkedin-in" style="color: #584222;"></i></a>
+            <a  href="https://facebook.com/profile.php?id=100016440818653&mibextid=ZbWKwL" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-facebook-f" style="color:  #149414;"></i></a>
+                <a href="https://instagram.com/aashutosh_singh88?igsh=eXRzenZ2bHRycW1q" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-instagram"  style="color: #149414;"></i></a>
+                <a href="https://snapchat.com/add/aashutosh_s8838?share_id=56g_5xW3_UU&locale=en-GB" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-snapchat"  style="color:  #149414;"></i></a>
+                <a href="https://LinkedIn.com/in/aashutosh-pratap-singh-00797b23a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-linkedin-in" style="color:  #149414;"></i></a>
 		</div>
-	<p>&copy; 2024 Created by Aashutosh Pratap Singh. All rights reserved.</p>
+        <p>&copy; 2024 Aashutosh Pratap Singh. All rights reserved.</p>
     </footer>
 
+    <script>
+        // Binary stream generator
+        function generateBinaryStream() {
+            const binaryContainer = document.getElementById('binary-background');
+            const binaryStream = document.createElement('div');
+            binaryStream.classList.add('binary-stream');
+            binaryStream.style.left = `${Math.random() * 100}vw`;
+
+            const binaryString = '0 1 '.repeat(20);
+            binaryStream.innerHTML = binaryString;
+            binaryContainer.appendChild(binaryStream);
+
+            setTimeout(() => {
+                binaryStream.remove();
+            }, 10000);
+        }
+
+        // Intro fade-out
+        setTimeout(() => {
+            document.getElementById('intro').style.display = 'none';
+        }, 4000);
+
+        // Generate binary streams after page loads
+        window.onload = () => {
+            for (let i = 0; i < 10; i++) {
+                generateBinaryStream();
+            }
+            setInterval(generateBinaryStream, 1000); // Continuous binary streams
+        };
+    </script>
 </body>
 </html>
