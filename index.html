@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-	   <link rel="shortcut icon" type="x-icon" href="face.png">
+    <link rel="shortcut icon" type="x-icon" href="face.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aashutosh Pratap Singh - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -309,6 +309,65 @@
                 transform: translateY(0);
             }
         }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            #hero h1 {
+                font-size: 40px;
+            }
+
+            #hero p {
+                font-size: 18px;
+            }
+
+            #about, #skills, #contact {
+                width: 90%;
+                margin: 50px auto;
+                padding: 30px;
+            }
+
+            #contact input,
+            #contact textarea {
+                width: 90%;
+            }
+
+            footer {
+                padding: 10px;
+            }
+
+            footer p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #hero h1 {
+                font-size: 30px;
+            }
+
+            #hero p {
+                font-size: 16px;
+            }
+
+            #about h2, #skills h2, #contact h2 {
+                font-size: 30px;
+            }
+
+            #about p, #skills ul li, #contact p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -350,15 +409,12 @@
         <ul>
             <li>Communication</li>
             <li>Coding</li>
-           
         </ul>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-     
         <form class="contact-form" action="https://formspree.io/f/mayrgrpl" method="post">
-    
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
@@ -368,11 +424,11 @@
 
     <footer>
         <div class="social-links">
-            <a  href="https://facebook.com/profile.php?id=100016440818653&mibextid=ZbWKwL" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-facebook-f" style="color:  #149414;"></i></a>
-                <a href="https://instagram.com/aashutosh_singh88?igsh=eXRzenZ2bHRycW1q" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-instagram"  style="color: #149414;"></i></a>
-                <a href="https://snapchat.com/add/aashutosh_s8838?share_id=56g_5xW3_UU&locale=en-GB" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-snapchat"  style="color:  #149414;"></i></a>
-                <a href="https://LinkedIn.com/in/aashutosh-pratap-singh-00797b23a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-linkedin-in" style="color:  #149414;"></i></a>
-		</div>
+            <a href="https://facebook.com/profile.php?id=100016440818653&mibextid=ZbWKwL" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-facebook-f" style="color:  #149414;"></i></a>
+            <a href="https://instagram.com/aashutosh_singh88?igsh=eXRzenZ2bHRycW1q" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-instagram" style="color: #149414;"></i></a>
+            <a href="https://snapchat.com/add/aashutosh_s8838?share_id=56g_5xW3_UU&locale=en-GB" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-snapchat" style="color: #149414;"></i></a>
+            <a href="https://LinkedIn.com/in/aashutosh-pratap-singh-00797b23a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 10px; color:  #149414; font-size: 24px; text-decoration: none;"><i class="fa-brands fa-linkedin-in" style="color:  #149414;"></i></a>
+        </div>
         <p>&copy; 2024 Aashutosh Pratap Singh. All rights reserved.</p>
     </footer>
 
