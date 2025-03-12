@@ -6,13 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aashutosh Pratap Singh - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* General reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000, #001f00);
+            color: #00ff00;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
         }
 
         /* Hacking-themed intro animation */
@@ -37,31 +46,6 @@
         }
 
         /* Binary background animation */
-        body {
-            background: black;
-            color: #00ff00;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            perspective: 1200px;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(to bottom, transparent, black), url('https://www.transparenttextures.com/patterns/cubes.png');
-            background-repeat: repeat;
-            opacity: 0.05;
-        }
-
         #binary-background {
             position: absolute;
             top: 0;
@@ -74,11 +58,10 @@
 
         .binary-stream {
             position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            top: -100%;
+            left: ${Math.random() * 100}%;
             font-size: 20px;
-            color: rgba(0, 255, 0, 0.3);
+            color: rgba(0, 255, 0, 0.2);
             animation: moveBinary 10s linear infinite;
         }
 
@@ -101,14 +84,12 @@
             z-index: 10;
         }
 
-        /* Logo Container */
         .logo-container {
             width: 60px;
-            height: 80px; /* 3x4 cm ratio */
+            height: 80px;
             perspective: 1000px;
         }
 
-        /* Facebook-sized logo with 3D effect */
         .profile-logo {
             width: 100%;
             height: 100%;
@@ -121,7 +102,6 @@
             transform: rotateY(360deg) rotateX(360deg);
         }
 
-        /* Navigation Menu */
         nav ul {
             list-style: none;
             display: flex;
@@ -131,7 +111,7 @@
         nav ul li a {
             text-decoration: none;
             color: #00ff00;
-            font-size: 20px;
+            font-size: 18px;
             padding: 10px 20px;
             transition: color 0.3s, background-color 0.3s;
         }
@@ -145,7 +125,7 @@
         /* Hero Section */
         #hero {
             text-align: center;
-            padding-top: 200px; /* Adjusted for logo */
+            padding-top: 200px;
             padding-bottom: 100px;
         }
 
@@ -164,6 +144,22 @@
             text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
+        #hero a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #00ff00;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #hero a:hover {
+            background-color: #88d3ce;
+        }
+
         /* About Section */
         #about {
             width: 80%;
@@ -173,12 +169,11 @@
             padding: 50px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-            transform: rotateX(10deg) rotateY(-10deg);
             transition: transform 0.8s ease-in-out;
         }
 
         #about:hover {
-            transform: rotateX(0deg) rotateY(0deg);
+            transform: scale(1.02);
         }
 
         #about h2 {
@@ -225,7 +220,7 @@
         }
 
         #skills ul li:hover {
-            transform: scale(1.2) rotateY(20deg);
+            transform: scale(1.2);
         }
 
         /* Contact Section */
@@ -241,12 +236,6 @@
             color: #00ff00;
         }
 
-        #contact p {
-            font-size: 18px;
-            margin: 10px 0;
-            color: #00ff00;
-        }
- /* Contact Form Styling */
         #contact form {
             display: flex;
             flex-direction: column;
@@ -283,8 +272,6 @@
         #contact button:hover {
             background-color: #88d3ce;
         }
-
-       
 
         /* Footer */
         footer {
@@ -394,14 +381,14 @@
     <section id="hero">
         <h1>Aashutosh Pratap Singh</h1>
         <p>Computer Engineering Student</p>
+        <a href="#contact">Get in Touch</a>
     </section>
 
     <section id="about">
         <h2>About Me</h2>
         <p>
-            welcome! To my Hacking theme portfolio,I am a passionate computer Science student with a strong focus on coding. 
-            I specialize in creating interactive and dynamic websites, incorporating innovative 
-            designs and modern technologies.
+            Welcome to my hacking-themed portfolio! I am a passionate computer science student with a strong focus on coding. 
+            I specialize in creating interactive and dynamic websites, incorporating innovative designs and modern technologies.
         </p>
     </section>
 
@@ -409,7 +396,9 @@
         <h2>Skills</h2>
         <ul>
             <li>Communication</li>
-            <li>UI/UX design</li>
+            <li>UI/UX Design</li>
+            <li>Web Development</li>
+            <li>Problem Solving</li>
         </ul>
     </section>
 
@@ -439,7 +428,7 @@
             const binaryContainer = document.getElementById('binary-background');
             const binaryStream = document.createElement('div');
             binaryStream.classList.add('binary-stream');
-            binaryStream.style.left = `${Math.random() * 100}vw`;
+            binaryStream.style.left = `${Math.random() * 100}%`;
 
             const binaryString = '0 1 '.repeat(20);
             binaryStream.innerHTML = binaryString;
