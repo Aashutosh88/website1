@@ -477,5 +477,80 @@
             setInterval(generateBinaryStream, isMobile ? 1500 : 1000); // Slower interval on mobile
         };
     </script>
+    <audio id="bg-music" loop>
+    <source src="hehe.mp3" type="audio/mpeg">
+    
+</audio>
+
+<button id="sound-toggle">
+    <span class="icon">🔊</span> Play Sound
+</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("bg-music");
+        const toggleButton = document.getElementById("sound-toggle");
+        const icon = toggleButton.querySelector(".icon");
+
+        let isPlaying = false;
+
+        toggleButton.addEventListener("click", function () {
+            if (isPlaying) {
+                audio.pause();
+                icon.textContent = "🔊";
+                toggleButton.textContent = " Play Sound";
+            } else {
+                audio.play();
+                icon.textContent = "🔇";
+                toggleButton.textContent = " Mute Sound";
+            }
+            toggleButton.prepend(icon); // Keep icon at the start
+            isPlaying = !isPlaying;
+        });
+
+        // Auto-start when user interacts anywhere on the page (once)
+        document.body.addEventListener("click", function () {
+            if (!isPlaying) {
+                audio.play();
+                icon.textContent = "🔇";
+                toggleButton.textContent = " Mute Sound";
+                toggleButton.prepend(icon);
+                isPlaying = true;
+            }
+        }, { once: true });
+    });
+</script>
+
+<style>
+    #sound-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(0, 255, 0, 0.8);
+        color: black;
+        border: none;
+        padding: 12px 18px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 25px;
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    #sound-toggle:hover {
+        background: #14a414;
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+    }
+
+    #sound-toggle:active {
+        transform: scale(0.95);
+    }
+</style>
+
 </body>
 </html>
