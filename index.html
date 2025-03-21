@@ -477,13 +477,14 @@
             setInterval(generateBinaryStream, isMobile ? 1500 : 1000); // Slower interval on mobile
         };
     </script>
- <audio id="bg-music" loop>
+   </script>
+<audio id="bg-music" loop>
     <source src="hehe.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
 <button id="sound-toggle">
-    <span class="icon">🔇</span> Mute Sound
+    <span class="icon">🔊</span> Mute Sound
 </button>
 
 <script>
@@ -492,30 +493,28 @@
         const toggleButton = document.getElementById("sound-toggle");
         const icon = toggleButton.querySelector(".icon");
 
-        let isMuted = false;
+        let isPlaying = false;
 
         try {
-            await audio.play(); // Try to autoplay
-            console.log("Autoplay success");
+            await audio.play(); // Try autoplaying
+            isPlaying = true;
         } catch (err) {
             console.log("Autoplay blocked, waiting for user interaction...");
+            toggleButton.style.display = "block"; // Show button if autoplay is blocked
         }
 
         toggleButton.addEventListener("click", function () {
-            if (isMuted) {
-                audio.play();
-                icon.textContent = "🔇";
-                toggleButton.innerHTML = ""; // Clear content
-                toggleButton.appendChild(icon);
-                toggleButton.append(" Mute Sound");
-            } else {
+            if (isPlaying) {
                 audio.pause();
                 icon.textContent = "🔊";
-                toggleButton.innerHTML = ""; // Clear content
-                toggleButton.appendChild(icon);
-                toggleButton.append(" Unmute Sound");
+                toggleButton.textContent = " Play Sound";
+            } else {
+                audio.play();
+                icon.textContent = "🔇";
+                toggleButton.textContent = " Mute Sound";
             }
-            isMuted = !isMuted;
+            toggleButton.prepend(icon); // Keep icon at the start
+            isPlaying = !isPlaying;
         });
     });
 </script>
@@ -535,7 +534,7 @@
         border-radius: 25px;
         box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
         transition: transform 0.2s, box-shadow 0.2s;
-        display: block; /* Always visible */
+        display: none; /* Initially hidden unless autoplay fails */
         align-items: center;
         gap: 8px;
     }
